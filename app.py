@@ -73,7 +73,7 @@ if st.session_state.authentication_status:
             df = st.session_state.gsheets_connection.read(worksheet="tasks")
         df["Done"] = df["Done"].astype(bool)
         df["Points"] = df["Points"].astype(int)
-        df["Due_date"] = pd.to_datetime(df["Due_date"], dayfirst=True)
+        df["Due_date"] = pd.to_datetime(df["Due_date"], format='%d/%m/%Y %H:%M:%S')
         df = df.replace({np.nan: None})
         new_rows = []
         for _, row in df.iterrows():

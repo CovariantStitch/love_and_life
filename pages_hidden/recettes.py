@@ -219,6 +219,7 @@ def recipe_dialog(day_index: int, meal: str):
         if not st.session_state.recipes_library:
             st.info("Aucune recette enregistrée pour le moment. Ajoutez-en une nouvelle.")
         else:
+            #TODO: add filters (but means that we should add ingredients -> better management of recipes)
             options = [
                 f"{r['title']} – {r['source']}" if r.get("source") else r["title"]
                 for r in st.session_state.recipes_library

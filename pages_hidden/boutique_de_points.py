@@ -142,7 +142,7 @@ list_challenges_and_dares = pd.concat([list_challenges_and_dares, categories], a
 
 # filters
 filter_cols = st.columns([1, 3])
-min_points = filter_cols[0].slider("Points minimum", min_value=0,
+min_points = filter_cols[0].slider("Filtrer sur les points", min_value=0,
                                    max_value=int(list_challenges_and_dares['Points'].max()),
                                    value=(0, int(points[current_user])))
 selected_categories = filter_cols[1].multiselect("Categories", categories.columns, default=categories.columns)

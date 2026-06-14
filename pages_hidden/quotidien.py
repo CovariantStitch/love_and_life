@@ -255,12 +255,12 @@ with day:
     cols_task = st.columns(3)
     df_ = df_data[df_data["Due_date"].dt.date == current_day]
     for i_, (task_index, task) in enumerate(df_.iterrows()):
-        show_task(task, task_index, "week", cols_task[i_ % len(cols_task)])
+        show_task(task, task_index, "day", cols_task[i_ % len(cols_task)])
 
 with week:
     cols_task = st.columns(3)
     filter1 = df_data["Due_date"].dt.date - current_day <= datetime.timedelta(days=7)
-    filter2 = df_data["Due_date"].dt.date - current_day > datetime.timedelta(days=0)
+    filter2 = df_data["Due_date"].dt.date - current_day >= datetime.timedelta(days=0)
     df_ = df_data[filter1 & filter2]
     for i_, (task_index, task) in enumerate(df_.iterrows()):
         show_task(task, task_index, "week", cols_task[i_ % len(cols_task)])
@@ -268,7 +268,7 @@ with week:
 with month:
     cols_task = st.columns(3)
     filter1 = df_data["Due_date"].dt.date - current_day < datetime.timedelta(days=30)
-    filter2 = df_data["Due_date"].dt.date - current_day > datetime.timedelta(days=7)
+    filter2 = df_data["Due_date"].dt.date - current_day >= datetime.timedelta(days=0)
     df_ = df_data[filter1 & filter2]
     for i_, (task_index, task) in enumerate(df_.iterrows()):
         show_task(task, task_index, "mois", cols_task[i_ % len(cols_task)])
