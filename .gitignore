@@ -1,0 +1,5 @@
+.streamlit/secrets.toml
+.streamlit/
+.idea
+.do_not_commit/
+.resources/

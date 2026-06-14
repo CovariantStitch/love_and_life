@@ -1,0 +1,40 @@
+.task-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #34495e;
+}
+/*.task-name:hover {
+    font-size: 1.5em;
+    cursor: pointer
+}*/
+.task-done {
+    color: green;
+    font-weight: bold;
+}
+.task-not-done {
+    color: red;
+    font-weight: bold;
+}
+.task-due {
+    font-style: italic;
+    color: #7f8c8d;
+}
+.task-points {
+    background-color: #ecf0f1;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.task-description {
+    margin-top: 10px;
+    color: #5d6d7e;
+}
+.task-dots {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    color: #64748b;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 999;
+    }
