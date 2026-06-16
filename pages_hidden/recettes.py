@@ -454,11 +454,10 @@ def render_grid():
         )
 
     # Grille : d'abord tous les midis, puis tous les soirs
-    for meal in MEALS:
-        cols = st.columns(7)
-        for day_index in range(7):
+    for day_index in range(7):
+        for meal in MEALS:
             slot_recipe = st.session_state.recipes_week[(day_index, meal)]
-            with cols[day_index].container(border=False):
+            with header_cols[day_index].container(border=False):
                 if slot_recipe is None:
                     html = f"""
                     <div class="meal-card-empty">
